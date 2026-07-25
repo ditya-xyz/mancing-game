@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish It! - VS Bot Komputer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h2>🎣 FISH IT! (Player vs Bot)</h2>
+        
+        <!-- Score Board -->
+        <div class="scoreboard">
+            <div class="player-score">
+                👤 Player: <span id="playerScore">0</span> Poin
+            </div>
+            <div class="bot-score">
+                🤖 Bot (CPU): <span id="botScore">0</span> Poin
+            </div>
+        </div>
+
+        <canvas id="gameCanvas" width="600" height="350"></canvas>
+
+        <!-- Mini Game / Control Bar -->
+        <div class="controls">
+            <div class="tension-bar-container">
+                <label>Tensi Senar (Tahan/Tekan Spasi atau Klik untuk Tarik):</label>
+                <div class="bar-outer">
+                    <div id="targetZone" class="target-zone"></div>
+                    <div id="tensionIndicator" class="tension-indicator"></div>
+                </div>
+            </div>
+            <button id="pullBtn">Tarik Senar! (SPASI)</button>
+        </div>
+
+        <div id="statusMessage" class="status">Tekan 'Tarik Senar' atau SPASI untuk menyeimbangkan tensi!</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
