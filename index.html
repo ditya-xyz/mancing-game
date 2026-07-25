@@ -3,38 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fish It! - VS Bot Komputer</title>
+    <title>CYBER FISH IT! - Cyberpunk Battle Arena</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="game-container">
-        <h2>🎣 FISH IT! (Player vs Bot)</h2>
-        
-        <!-- Score Board -->
-        <div class="scoreboard">
-            <div class="player-score">
-                👤 Player: <span id="playerScore">0</span> Poin
-            </div>
-            <div class="bot-score">
-                🤖 Bot (CPU): <span id="botScore">0</span> Poin
-            </div>
-        </div>
+    <div class="game-card">
+        <header>
+            <h1 class="glitch-title">CYBER FISH IT!</h1>
+            <p class="subtitle">HUMAN VS CYBORG FISHING DUEL</p>
+        </header>
 
-        <canvas id="gameCanvas" width="600" height="350"></canvas>
-
-        <!-- Mini Game / Control Bar -->
-        <div class="controls">
-            <div class="tension-bar-container">
-                <label>Tensi Senar (Tahan/Tekan Spasi atau Klik untuk Tarik):</label>
-                <div class="bar-outer">
-                    <div id="targetZone" class="target-zone"></div>
-                    <div id="tensionIndicator" class="tension-indicator"></div>
+        <!-- DASHBOARD HUD -->
+        <div class="hud-container">
+            <div class="player-hud hud-box">
+                <div class="avatar">👤</div>
+                <div class="hud-info">
+                    <span class="label">PLAYER 1</span>
+                    <span id="playerScore" class="score">0000</span>
                 </div>
             </div>
-            <button id="pullBtn">Tarik Senar! (SPASI)</button>
+
+            <div class="vs-badge">VS</div>
+
+            <div class="bot-hud hud-box">
+                <div class="hud-info align-right">
+                    <span class="label">CYBORG-X (BOT)</span>
+                    <span id="botScore" class="score">0000</span>
+                </div>
+                <div class="avatar">🤖</div>
+            </div>
         </div>
 
-        <div id="statusMessage" class="status">Tekan 'Tarik Senar' atau SPASI untuk menyeimbangkan tensi!</div>
+        <!-- CANVAS ARENA -->
+        <div class="canvas-wrapper">
+            <canvas id="gameCanvas" width="650" height="320"></canvas>
+            <div id="fishAlert" class="fish-alert">FISH ON!</div>
+        </div>
+
+        <!-- REEL CONTROLLER -->
+        <div class="controls-panel">
+            <div class="tension-header">
+                <span>TENSION CONTROL</span>
+                <span id="tensionVal">0%</span>
+            </div>
+            
+            <div class="bar-outer">
+                <div id="targetZone" class="target-zone"></div>
+                <div id="tensionIndicator" class="tension-indicator"></div>
+            </div>
+
+            <button id="pullBtn" class="cyber-btn">
+                <span class="btn-glow"></span>
+                <span class="btn-text">HOLD / PRESS [ SPACE ] TO REEL</span>
+            </button>
+        </div>
+
+        <div id="statusMessage" class="status-box">SYSTEM READY. TAHAN SPASI UNTUK MENJARING CYBER-FISH!</div>
     </div>
 
     <script src="script.js"></script>
